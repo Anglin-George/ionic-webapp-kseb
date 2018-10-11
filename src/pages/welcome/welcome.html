@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>KSEB Live</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal"  (click)="openModal()">
+        <ion-icon name="person-add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding id="welcome">
+  <ion-card>
+    <img src="../../assets/imgs/digitalkeralamfeature1067.jpg" alt="KSEB">
+    <hr>
+    <ion-card-content>
+      <h2>We are dedicated to help you for know the meter reading and you can get best tips to save energy.</h2>      
+    </ion-card-content>
+  
+  </ion-card>
+  <button ion-button block (click)="openModal()">Login</button>
+  <button ion-button block color="secondary">Tips</button>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>    
+    <ion-buttons text-center>
+      Developed & designed by <a href="http://fabstudioz.com">Fabstudioz</a>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
