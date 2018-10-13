@@ -23,7 +23,7 @@ export class SignupPage {
   signUp(){    
     this.authService.postData(this.userData,"signup").then((result)=>{
       this.resposeData = result;
-      console.log(result['error'].text);
+      //console.log(result['error'].text);
       if(result['error'].text=="")
       {
         localStorage.setItem('userData',JSON.stringify(this.resposeData));
