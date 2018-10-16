@@ -5,7 +5,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SignupPage } from '../pages/signup/signup';
 import { WelcomePage } from '../pages/welcome/welcome';
-import { LoginPage } from '../pages/login/login';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
@@ -19,7 +18,6 @@ import { HttpClientModule } from '@angular/common/http';
     HomePage,
     SignupPage,
     WelcomePage,
-    LoginPage
   ],
   imports: [
     BrowserModule,HttpModule,HttpClientModule,
@@ -31,7 +29,6 @@ import { HttpClientModule } from '@angular/common/http';
     HomePage,
     SignupPage,
     WelcomePage,
-    LoginPage
   ],
   providers: [
     StatusBar,

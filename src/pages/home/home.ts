@@ -39,8 +39,9 @@ export class HomePage {
         {
           text: 'Yes',
           handler: () => {
-            // const root = this.app.getRootNavs()[0].push(WelcomePage);
-            // root.popToRoot();
+            localStorage.clear();
+            const root = this.app.getRootNav();
+            root.popToRoot();
             this.navCtrl.setPages([
               { page: WelcomePage }
             ]);

@@ -18,7 +18,7 @@ import { ToastController } from 'ionic-angular';
 export class SignupPage {
   resposeData : any;
   userData = {"name":"","email":"","password":"","mobilenumber":""};
-  constructor(public navCtrl: NavController, public authService: AuthServiceProvider, public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController,public navParams: NavParams, public authService: AuthServiceProvider, public toastCtrl: ToastController) {
   }
   signUp(){    
     this.authService.postData(this.userData,"signup").then((result)=>{
@@ -32,7 +32,8 @@ export class SignupPage {
         const toast = this.toastCtrl.create({
           message: 'Incorrect Registration Details',
           showCloseButton: true,
-          closeButtonText: 'Ok'
+          closeButtonText: 'Ok',
+          duration: 3000,
         });
         toast.present();
       }
@@ -40,7 +41,8 @@ export class SignupPage {
       const toast = this.toastCtrl.create({
         message: 'Registration Error',
         showCloseButton: true,
-        closeButtonText: 'Ok'
+        closeButtonText: 'Ok',
+        duration: 3000,
       });
       toast.present();
     });
