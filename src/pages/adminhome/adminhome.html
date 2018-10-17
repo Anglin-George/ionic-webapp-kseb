@@ -1,0 +1,71 @@
+<!-- <ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Admin</ion-title>     
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+  </ion-menu> -->
+
+<ion-header>
+  <ion-navbar color="b1" hideBackButton="true">
+      <button id='menutog' ion-button icon-only menuToggle start>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>
+      KSEB
+    </ion-title>
+    <ion-buttons end>
+      <button  ion-button icon-only color="royal" (click)="doConfirm()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-nav #content></ion-nav>
+
+<ion-content padding>
+  <ion-card class="grad">
+
+    <ion-card-header>
+      Customers
+    </ion-card-header>
+  
+    <ion-card-content text-right>
+      <a (click)="viewUsers()">view more</a>
+    </ion-card-content>
+  
+  </ion-card>
+
+  <ion-card class="grad">
+
+    <ion-card-header>
+      Connection Requests
+    </ion-card-header>
+  
+    <ion-card-content text-right>
+      <a (click)="viewUsers()">view more</a>
+    </ion-card-content>
+  
+  </ion-card>
+  <ion-card class="grad">
+
+    <ion-card-header>
+      Admin
+    </ion-card-header>
+  
+    <ion-card-content text-right>
+      <a (click)="viewUsers()">view more</a>
+    </ion-card-content>
+  
+  </ion-card>
+</ion-content>

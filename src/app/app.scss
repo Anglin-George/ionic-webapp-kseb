@@ -14,7 +14,7 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
-// #round-box{
-//     border-radius: 5px;        
-//     border: 1px solid #0c113a60;
-// }
+#round-box{
+    border-radius: 5px !important;        
+    border: 1px solid #0c113a60 !important;
+}

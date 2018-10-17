@@ -1,0 +1,19 @@
+page-adminhome {
+    // #menutog
+    // {
+    //     display: block !important;
+    // }
+    .grad {      
+        border-radius: 8px; 
+        box-shadow: 0px 0px 18px 1px rgba(0,0,0,0.10);;
+      }
+      .tab-button {
+        &[aria-selected="false"] {
+          color: #8c8c8c !important;
+        }
+    
+        &[aria-selected="true"] {
+          color: #f53d3d !important;
+        }
+      }
+}

@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 import { HomePage } from '../home/home';
-
+import { AdminhomePage } from '../adminhome/adminhome';
 /**
  * Generated class for the WelcomePage page.
  *
@@ -18,15 +18,24 @@ import { HomePage } from '../home/home';
 })
 export class WelcomePage {
   resposeData : any;
+  sessionData : any;
   userData = {"email":"","password":""};
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController,public modalCtrl : ModalController) {
     if(localStorage.getItem('userData'))
     {
-      this.navCtrl.setRoot(HomePage);
+      this.sessionData = JSON.parse(localStorage.getItem('userData'));
+      // console.log(this.sessionData.email);
+      if(this.sessionData.email== "admin")
+      {
+        this.navCtrl.setRoot(AdminhomePage);
+      }
+      else{
+        this.navCtrl.setRoot(HomePage);
+      }      
     }
     else{
-      
+      // this.navCtrl.setRoot(WelcomePage);
     }
   }
 
@@ -45,7 +54,7 @@ export class WelcomePage {
       if(this.userData.email=="admin" && this.userData.password=="adminpassword")
       {
         localStorage.setItem('userData',JSON.stringify(this.userData));
-        this.navCtrl.push(HomePage);
+        this.navCtrl.push(AdminhomePage);
       }
       else{
         console.log("Not admin");

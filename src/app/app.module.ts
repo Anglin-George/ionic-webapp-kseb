@@ -7,6 +7,7 @@ import { SignupPage } from '../pages/signup/signup';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { AdminhomePage } from '../pages/adminhome/adminhome';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     HomePage,
     SignupPage,
     WelcomePage,
+    AdminhomePage,
   ],
   imports: [
     BrowserModule,HttpModule,HttpClientModule,
@@ -29,6 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
     HomePage,
     SignupPage,
     WelcomePage,
+    AdminhomePage
   ],
   providers: [
     StatusBar,
