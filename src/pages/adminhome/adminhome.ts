@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {  Nav } from 'ionic-angular';
 import {  MenuController ,App ,AlertController } from 'ionic-angular';
 import { WelcomePage } from '../welcome/welcome';
+import { SignupPage } from '../signup/signup';
 /**
  * Generated class for the AdminhomePage page.
  *
@@ -64,5 +65,8 @@ export class AdminhomePage {
   viewUsers(){
     console.log("user fn");
   }
-
+  addCustomer(){
+    console.log("Add Cutomer");
+    this.navCtrl.push(SignupPage);
+  }
 }
