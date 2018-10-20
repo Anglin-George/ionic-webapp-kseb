@@ -11,8 +11,8 @@ import { AdminhomePage } from '../pages/adminhome/adminhome';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
-
-
+import { Network } from '@ionic-native/network';
+import { CustomersPage } from '../pages/customers/customers';
 @NgModule({
   declarations: [
     MyApp,
@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     SignupPage,
     WelcomePage,
     AdminhomePage,
+    CustomersPage,
   ],
   imports: [
     BrowserModule,HttpModule,HttpClientModule,
@@ -31,13 +32,15 @@ import { HttpClientModule } from '@angular/common/http';
     HomePage,
     SignupPage,
     WelcomePage,
-    AdminhomePage
+    AdminhomePage,
+    CustomersPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthServiceProvider
+    AuthServiceProvider,
+    Network
   ]
 })
 export class AppModule {}

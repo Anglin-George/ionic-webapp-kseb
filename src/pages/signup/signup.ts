@@ -3,6 +3,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { HomePage } from '../home/home';
 import { ToastController } from 'ionic-angular';
+import { Network } from '@ionic-native/network';
+import { LoadingController } from 'ionic-angular';
+
 /**
  * Generated class for the SignupPage page.
  *
@@ -17,18 +20,38 @@ import { ToastController } from 'ionic-angular';
 })
 export class SignupPage {
   resposeData : any;
-  userData = {"name":"","email":"","password":"","mobilenumber":""};
-  constructor(public navCtrl: NavController,public navParams: NavParams, public authService: AuthServiceProvider, public toastCtrl: ToastController) {
+  loading: any;
+  userData = {"name":"","email":"","password":"","mobilenumber":"","consumernumber":"","devicenumber":""};
+  constructor(public navCtrl: NavController,public navParams: NavParams, public authService: AuthServiceProvider, public toastCtrl: ToastController, private network: Network, public loadingController:LoadingController) {
   }
-  signUp(){    
+
+  signUp(){  
+    this.loading = this.loadingController.create({
+      content: "loading.please wait..."
+    });
+    this.loading.present();
+
     this.authService.postData(this.userData,"signup").then((result)=>{
       this.resposeData = result;
       //console.log(result['error'].text);
       if(result['error'].text=="")
       {
-        localStorage.setItem('userData',JSON.stringify(this.resposeData));
-        this.navCtrl.push(HomePage);
+        this.loading.dismissAll();
+        const toast = this.toastCtrl.create({
+          message: 'Registration Success',
+          showCloseButton: false,
+          position : "top",          
+          duration: 2000,
+        });
+        this.userData.name='';
+        this.userData.email='';
+        this.userData.password='';
+        this.userData.mobilenumber='';
+        this.userData.consumernumber='';
+        this.userData.devicenumber='';
+        toast.present();
       }else{
+        this.loading.dismissAll();
         const toast = this.toastCtrl.create({
           message: 'Incorrect Registration Details',
           showCloseButton: true,
@@ -38,8 +61,9 @@ export class SignupPage {
         toast.present();
       }
     }, (err) => {
+      this.loading.dismissAll();
       const toast = this.toastCtrl.create({
-        message: 'Registration Error',
+        message: 'Network Error',
         showCloseButton: true,
         closeButtonText: 'Ok',
         duration: 3000,

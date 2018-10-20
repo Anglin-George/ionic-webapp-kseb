@@ -9,16 +9,28 @@
 <ion-content padding>
   <ion-list>
     <ion-item>
-      <ion-input type="text" placeholder="Username" [(ngModel)]="userData.name"></ion-input>
+      <ion-label floating>Consumer number</ion-label>
+      <ion-input type="tel" [(ngModel)]="userData.consumernumber"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input type="password" placeholder="Passsword" [(ngModel)]="userData.password"></ion-input>
+      <ion-label floating>Username</ion-label>
+      <ion-input type="text" [(ngModel)]="userData.name"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input type="email" placeholder="Email" [(ngModel)]="userData.email"></ion-input>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="email"  [(ngModel)]="userData.email"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input type="tel" placeholder="Mobile Number" [(ngModel)]="userData.mobilenumber"></ion-input>
+      <ion-label floating>Passsword</ion-label>
+      <ion-input type="password"  [(ngModel)]="userData.password"></ion-input>
+    </ion-item>    
+    <ion-item>
+      <ion-label floating>Mobile number</ion-label>
+      <ion-input type="tel" [(ngModel)]="userData.mobilenumber"></ion-input>
+    </ion-item>    
+    <ion-item>
+      <ion-label floating>Device number</ion-label>
+      <ion-input type="tel" [(ngModel)]="userData.devicenumber"></ion-input>
     </ion-item>
     <div padding>
       <button id="round-box" ion-button color="b1" (click)="signUp()" block>Register</button>

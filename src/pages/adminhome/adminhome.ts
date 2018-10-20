@@ -4,6 +4,7 @@ import {  Nav } from 'ionic-angular';
 import {  MenuController ,App ,AlertController } from 'ionic-angular';
 import { WelcomePage } from '../welcome/welcome';
 import { SignupPage } from '../signup/signup';
+import { CustomersPage } from '../customers/customers';
 /**
  * Generated class for the AdminhomePage page.
  *
@@ -63,7 +64,7 @@ export class AdminhomePage {
   }
 
   viewUsers(){
-    console.log("user fn");
+    this.navCtrl.push(CustomersPage);
   }
   addCustomer(){
     console.log("Add Cutomer");
