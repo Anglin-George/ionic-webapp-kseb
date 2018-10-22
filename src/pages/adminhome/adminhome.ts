@@ -5,6 +5,7 @@ import {  MenuController ,App ,AlertController } from 'ionic-angular';
 import { WelcomePage } from '../welcome/welcome';
 import { SignupPage } from '../signup/signup';
 import { CustomersPage } from '../customers/customers';
+import { TipsPage } from '../tips/tips';
 /**
  * Generated class for the AdminhomePage page.
  *
@@ -65,6 +66,10 @@ export class AdminhomePage {
 
   viewUsers(){
     this.navCtrl.push(CustomersPage);
+  }
+
+  viewTips(){
+    this.navCtrl.push(TipsPage);
   }
   addCustomer(){
     console.log("Add Cutomer");

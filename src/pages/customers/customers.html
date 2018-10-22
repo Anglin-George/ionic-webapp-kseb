@@ -7,12 +7,24 @@
 <ion-header>
 
   <ion-navbar color="b1">
-    <ion-title>customers</ion-title>
+    <ion-title>Customers</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <ion-list>
+    <ion-item *ngFor="let item of customer">
+      <h2>{{item.name}}</h2>
+      <p>{{item.email}}</p>
+      <p>{{item.mobilenumber}}</p>
+      <p>{{item.consumernumber}}</p>
+      <p>{{item.devicenumber}}</p>
+      <ion-note item-end>{{item.CreatedOn | amTimeAgo}}</ion-note>
+    </ion-item>
+    <ion-item *ngIf="noCustomers" text-center>
+      <h2>Nothing here</h2>
+    </ion-item>
+  </ion-list>
 </ion-content>

@@ -4,7 +4,8 @@ import { LoadingController } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { ToastController } from 'ionic-angular';
 /**
- * Generated class for the CustomersPage page.
+/**
+ * Generated class for the TipsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -12,36 +13,41 @@ import { ToastController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-customers',
-  templateUrl: 'customers.html',
+  selector: 'page-tips',
+  templateUrl: 'tips.html',
 })
-export class CustomersPage {
+export class TipsPage {
   userData = {"limit":"all"};
   loading: any;
   resposeData : any;
-  customer : any;
-  noCustomers : boolean;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public authService: AuthServiceProvider, public loadingController:LoadingController,public toastCtrl: ToastController) {
-    this.noCustomers = false;
-    this.customers();
+  tips : any;
+  noTips : boolean;
+  constructor(public navCtrl: NavController, public navParams: NavParams,public authService: AuthServiceProvider, public loadingController:LoadingController,public toastCtrl: ToastController) {
+    this.noTips = false;
+    this.viewtips();
   }
 
-  customers()
-  {
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad TipsPage');
+  }
+  addTips(){
+
+  }
+  viewtips(){
     this.loading = this.loadingController.create({
       content: "loading.please wait..."
     });
     this.loading.present();
-    this.authService.postData(this.userData,"customers").then((result)=>{
+    this.authService.postData(this.userData,"tips").then((result)=>{
       this.resposeData = result;
-      if(this.resposeData.customersData.length>0)
+      if(this.resposeData.tipsData.length>0)
       {
         this.loading.dismissAll();
-        this.customer = this.resposeData.customersData;
+        this.tips = this.resposeData.tipsData;
       }
       else{
         this.loading.dismissAll();
-        this.noCustomers = true;
+        this.noTips = true;
       }            
     }, (err) => {
       this.loading.dismissAll();
@@ -53,6 +59,5 @@ export class CustomersPage {
       });
       toast.present();
     });
-
   }
 }

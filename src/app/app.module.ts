@@ -13,6 +13,8 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { Network } from '@ionic-native/network';
 import { CustomersPage } from '../pages/customers/customers';
+import {MomentModule} from 'angular2-moment';
+import {TipsPage} from '../pages/tips/tips';
 @NgModule({
   declarations: [
     MyApp,
@@ -21,9 +23,10 @@ import { CustomersPage } from '../pages/customers/customers';
     WelcomePage,
     AdminhomePage,
     CustomersPage,
+    TipsPage,
   ],
   imports: [
-    BrowserModule,HttpModule,HttpClientModule,
+    BrowserModule,HttpModule,HttpClientModule,MomentModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -33,7 +36,8 @@ import { CustomersPage } from '../pages/customers/customers';
     SignupPage,
     WelcomePage,
     AdminhomePage,
-    CustomersPage
+    CustomersPage,
+    TipsPage
   ],
   providers: [
     StatusBar,
