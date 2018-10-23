@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { ToastController } from 'ionic-angular';
+import { AddtipsPage } from '../addtips/addtips';
 /**
 /**
  * Generated class for the TipsPage page.
@@ -28,10 +29,10 @@ export class TipsPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TipsPage');
+    console.log('ionViewDidLoad TipsPage1');
   }
   addTips(){
-
+    this.navCtrl.push(AddtipsPage);
   }
   viewtips(){
     this.loading = this.loadingController.create({

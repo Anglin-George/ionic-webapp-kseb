@@ -13,8 +13,9 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { Network } from '@ionic-native/network';
 import { CustomersPage } from '../pages/customers/customers';
-import {MomentModule} from 'angular2-moment';
-import {TipsPage} from '../pages/tips/tips';
+import { MomentModule } from 'angular2-moment';
+import { TipsPage } from '../pages/tips/tips';
+import { AddtipsPage } from '../pages/addtips/addtips';
 @NgModule({
   declarations: [
     MyApp,
@@ -24,6 +25,7 @@ import {TipsPage} from '../pages/tips/tips';
     AdminhomePage,
     CustomersPage,
     TipsPage,
+    AddtipsPage,
   ],
   imports: [
     BrowserModule,HttpModule,HttpClientModule,MomentModule,
@@ -37,7 +39,8 @@ import {TipsPage} from '../pages/tips/tips';
     WelcomePage,
     AdminhomePage,
     CustomersPage,
-    TipsPage
+    TipsPage,
+    AddtipsPage,
   ],
   providers: [
     StatusBar,
