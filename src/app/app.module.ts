@@ -16,6 +16,7 @@ import { CustomersPage } from '../pages/customers/customers';
 import { MomentModule } from 'angular2-moment';
 import { TipsPage } from '../pages/tips/tips';
 import { AddtipsPage } from '../pages/addtips/addtips';
+import {MomentTimezoneModule} from 'angular-moment-timezone';
 @NgModule({
   declarations: [
     MyApp,
@@ -28,7 +29,7 @@ import { AddtipsPage } from '../pages/addtips/addtips';
     AddtipsPage,
   ],
   imports: [
-    BrowserModule,HttpModule,HttpClientModule,MomentModule,
+    BrowserModule,HttpModule,HttpClientModule,MomentModule,MomentTimezoneModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

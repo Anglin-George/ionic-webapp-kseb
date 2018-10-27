@@ -44,7 +44,8 @@ export class TipsPage {
       if(this.resposeData.tipsData.length>0)
       {
         this.loading.dismissAll();
-        this.tips = this.resposeData.tipsData;
+        this.noTips = false;
+        this.tips = this.resposeData.tipsData;        
       }
       else{
         this.loading.dismissAll();
@@ -52,6 +53,7 @@ export class TipsPage {
       }            
     }, (err) => {
       this.loading.dismissAll();
+      this.noTips = true;
       const toast = this.toastCtrl.create({
         message: 'Network Error',
         showCloseButton: true,
@@ -61,4 +63,29 @@ export class TipsPage {
       toast.present();
     });
   }
+
+  doRefresh(refresher) {
+    this.authService.postData(this.userData,"tips").then((result)=>{
+      this.resposeData = result;
+      if(this.resposeData.tipsData.length>0)
+      {
+        refresher.complete();
+        this.tips = this.resposeData.tipsData;
+      }
+      else{
+        refresher.complete();
+        this.noTips = true;
+      }            
+    }, (err) => {
+      refresher.complete();
+      const toast = this.toastCtrl.create({
+        message: 'Network Error',
+        showCloseButton: true,
+        closeButtonText: 'Ok',
+        duration: 3000,
+      });
+      toast.present();
+    });
+  }
+
 }

@@ -25,6 +25,7 @@
     "@ionic-native/splash-screen": "~4.15.0",
     "@ionic-native/status-bar": "~4.15.0",
     "@ionic/storage": "2.2.0",
+    "angular-moment-timezone": "^1.7.1",
     "angular2-moment": "^1.9.0",
     "cordova-android": "6.3.0",
     "cordova-plugin-device": "^2.0.2",

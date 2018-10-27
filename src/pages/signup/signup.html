@@ -10,7 +10,7 @@
   <ion-list>
     <ion-item>
       <ion-label floating>Consumer number</ion-label>
-      <ion-input type="tel" [(ngModel)]="userData.consumernumber"></ion-input>
+      <ion-input type="text" [(ngModel)]="userData.consumernumber"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label floating>Username</ion-label>
@@ -30,7 +30,7 @@
     </ion-item>    
     <ion-item>
       <ion-label floating>Device number</ion-label>
-      <ion-input type="tel" [(ngModel)]="userData.devicenumber"></ion-input>
+      <ion-input type="text" [(ngModel)]="userData.devicenumber"></ion-input>
     </ion-item>
     <div padding>
       <button id="round-box" ion-button color="b1" (click)="signUp()" block>Register</button>

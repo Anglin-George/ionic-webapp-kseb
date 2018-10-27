@@ -14,10 +14,13 @@
 
 
 <ion-content padding>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingText="Pull to refresh"></ion-refresher-content>
+      </ion-refresher>
   <ion-list>
     <ion-item *ngFor="let item of tips">
       <h2>{{item.tips}}</h2>
-      <ion-note item-end>{{item.CreatedOn | amTimeAgo}}</ion-note>
+      <ion-note item-end>{{item.CreatedOn |amTz:'Asia/Kolkata' |amTimeAgo}}</ion-note>
     </ion-item>
     <ion-item *ngIf="noTips" text-center>
       <h2>Nothing here</h2>
