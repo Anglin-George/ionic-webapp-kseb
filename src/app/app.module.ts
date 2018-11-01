@@ -17,6 +17,7 @@ import { MomentModule } from 'angular2-moment';
 import { TipsPage } from '../pages/tips/tips';
 import { AddtipsPage } from '../pages/addtips/addtips';
 import {MomentTimezoneModule} from 'angular-moment-timezone';
+import {UserprofilePage} from '../pages/userprofile/userprofile';
 @NgModule({
   declarations: [
     MyApp,
@@ -27,6 +28,7 @@ import {MomentTimezoneModule} from 'angular-moment-timezone';
     CustomersPage,
     TipsPage,
     AddtipsPage,
+    UserprofilePage,
   ],
   imports: [
     BrowserModule,HttpModule,HttpClientModule,MomentModule,MomentTimezoneModule,
@@ -42,6 +44,7 @@ import {MomentTimezoneModule} from 'angular-moment-timezone';
     CustomersPage,
     TipsPage,
     AddtipsPage,
+    UserprofilePage,
   ],
   providers: [
     StatusBar,

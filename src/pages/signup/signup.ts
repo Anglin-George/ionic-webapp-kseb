@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
-import { HomePage } from '../home/home';
+// import { HomePage } from '../home/home';
 import { ToastController } from 'ionic-angular';
-import { Network } from '@ionic-native/network';
+// import { Network } from '@ionic-native/network';
 import { LoadingController } from 'ionic-angular';
 
 /**
@@ -22,7 +22,7 @@ export class SignupPage {
   resposeData : any;
   loading: any;
   userData = {"name":"","email":"","password":"","mobilenumber":"","consumernumber":"","devicenumber":""};
-  constructor(public navCtrl: NavController,public navParams: NavParams, public authService: AuthServiceProvider, public toastCtrl: ToastController, private network: Network, public loadingController:LoadingController) {
+  constructor(public navCtrl: NavController,public navParams: NavParams, public authService: AuthServiceProvider, public toastCtrl: ToastController, public loadingController:LoadingController) {
   }
 
   signUp(){  

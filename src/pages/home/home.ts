@@ -1,21 +1,31 @@
 import { Component,ViewChild  } from '@angular/core';
-import {  Nav } from 'ionic-angular';
-import { NavController, MenuController ,App ,AlertController } from 'ionic-angular';
+import { NavController, MenuController ,App ,AlertController,Nav } from 'ionic-angular';
 import { WelcomePage } from '../welcome/welcome';
-
+import {UserprofilePage} from '../userprofile/userprofile';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
   @ViewChild(Nav) nav: Nav;
-  pages: Array<{title: string, component: any}>;
+  // pages: Array<{title: string, component: any}>;
+  pages2: any;
+  sessionData : any;
   constructor(public navCtrl: NavController,menu: MenuController,public app: App,public alertCtrl: AlertController) {
     menu.enable(true);
-    this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'Home 2', component: HomePage }
-    ];
+    // this.pages = [
+    //   { title: 'Connection Request', component: HomePage },
+    //   { title: 'Compalint Registration', component: HomePage },
+    //   { title: 'Paymeny History', component: HomePage }
+    // ];
+
+    this.pages2 = {
+      profilePage: UserprofilePage,
+      homePage: HomePage,
+      feedbackPage: HomePage,
+    } 
+    this.sessionData = JSON.parse(localStorage.getItem('userData'));
+    //console.log(this.sessionData.userData.name);
   }
   openPage(page) {
     // Reset the content nav to have just this page

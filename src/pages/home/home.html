@@ -1,16 +1,49 @@
 <ion-menu [content]="content">
   <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
+    <ion-toolbar color="b1">
+      <ion-title>Kseb Live</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <ion-content>
+  <!-- <ion-content>
     <ion-list>
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
       </button>
     </ion-list>
+  </ion-content> -->
+  <ion-content>
+      <button  menuClose ion-item icon-left no-lines  (click)="nav.setRoot(pages2.homePage)">
+        <ion-icon class="icon-color" name="home"></ion-icon>
+        Home
+      </button>      
+      <button menuClose ion-item icon-left no-lines  (click)="nav.setRoot(pages2.feedbackPage)">
+        <ion-icon class="icon-color" name="ios-bulb"></ion-icon>
+        Connection Request
+      </button>
+      <button menuClose ion-item icon-left no-lines  (click)="nav.setRoot(pages2.feedbackPage)">
+        <ion-icon class="icon-color" name="ios-create"></ion-icon>
+        Complaint Registration
+      </button>
+      <button menuClose ion-item icon-left no-lines  (click)="nav.setRoot(pages2.feedbackPage)">
+        <ion-icon class="icon-color" name="cash"></ion-icon>
+        Payment History
+      </button>
+      <hr>
+      <!-- <ion-item-divider>
+        Settings
+      </ion-item-divider> -->
+      <button menuClose ion-item icon-left no-lines   (click)="navCtrl.setRoot(pages2.profilePage)">
+        <ion-icon class="icon-color" name="person"></ion-icon>
+        My Account
+      </button>
+      <!-- <button menuClose ion-item icon-left no-lines  (click)="nav.setRoot(pages2.feedbackPage)">
+        <ion-icon class="icon-color" name="settings"></ion-icon>
+        Change Password
+      </button> -->
+      <button menuClose ion-item icon-left no-lines  (click)="doConfirm()">
+        <ion-icon class="icon-color" name="ios-exit"></ion-icon>
+        Log Out
+      </button>
   </ion-content>
 
   </ion-menu>
@@ -23,25 +56,25 @@
     <ion-title>
       Kseb Live
     </ion-title>
-    <ion-buttons end>
+    <!-- <ion-buttons end>
       <button  ion-button icon-only color="royal" (click)="doConfirm()">
         <ion-icon name="log-out"></ion-icon>
       </button>
-    </ion-buttons>
+    </ion-buttons> -->
   </ion-navbar>
 </ion-header>
 
 <ion-nav #content></ion-nav>
 
 <ion-content padding>
-  <ion-card>
+  <ion-card >
 
-    <ion-card-header>
-      Login
+    <ion-card-header >
+      Welcome
     </ion-card-header>
   
     <ion-card-content>
-    <h2>Welcome</h2>
+    <h2>{{this.sessionData.userData.name}}</h2>
     </ion-card-content>
   
   </ion-card>
