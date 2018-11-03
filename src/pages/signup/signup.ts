@@ -6,13 +6,6 @@ import { ToastController } from 'ionic-angular';
 // import { Network } from '@ionic-native/network';
 import { LoadingController } from 'ionic-angular';
 
-/**
- * Generated class for the SignupPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-signup',

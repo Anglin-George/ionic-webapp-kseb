@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar color="b1">
+    <ion-title>Update Profile</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closeModal()">Close</button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input type="text"  [(ngModel)]="profile.name"></ion-input>
+    </ion-item>  
+    <ion-item>
+      <ion-label floating>Mobile Number</ion-label>
+      <ion-input type="tel"  [(ngModel)]="profile.mobilenumber" ></ion-input>
+    </ion-item> 
+    <br> 
+    <button id="round-box" color="b1" (click)="updateProfile()" ion-button block>Update Details</button>
+  </ion-list>  
+</ion-content>

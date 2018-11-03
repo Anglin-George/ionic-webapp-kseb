@@ -12,15 +12,15 @@
     </ion-list>
   </ion-content> -->
   <ion-content>
-      <button  menuClose ion-item icon-left no-lines  (click)="nav.setRoot(pages2.homePage)">
+      <!-- <button  menuClose ion-item icon-left no-lines  (click)="nav.setRoot(pages2.homePage)">
         <ion-icon class="icon-color" name="home"></ion-icon>
         Home
-      </button>      
-      <button menuClose ion-item icon-left no-lines  (click)="nav.setRoot(pages2.feedbackPage)">
+      </button>       -->
+      <!-- <button menuClose ion-item icon-left no-lines  (click)="nav.setRoot(pages2.feedbackPage)">
         <ion-icon class="icon-color" name="ios-bulb"></ion-icon>
         Connection Request
-      </button>
-      <button menuClose ion-item icon-left no-lines  (click)="nav.setRoot(pages2.feedbackPage)">
+      </button> -->
+      <button menuClose ion-item icon-left no-lines  (click)="navCtrl.push(pages2.complaintPage)">
         <ion-icon class="icon-color" name="ios-create"></ion-icon>
         Complaint Registration
       </button>
@@ -32,7 +32,7 @@
       <!-- <ion-item-divider>
         Settings
       </ion-item-divider> -->
-      <button menuClose ion-item icon-left no-lines   (click)="navCtrl.setRoot(pages2.profilePage)">
+      <button menuClose ion-item icon-left no-lines   (click)="navCtrl.push(pages2.profilePage)">
         <ion-icon class="icon-color" name="person"></ion-icon>
         My Account
       </button>
@@ -65,17 +65,25 @@
 </ion-header>
 
 <ion-nav #content></ion-nav>
-
 <ion-content padding>
-  <ion-card >
-
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingText="Pull to refresh"></ion-refresher-content>
+      </ion-refresher>
+  <ion-card>
     <ion-card-header >
-      Welcome
-    </ion-card-header>
-  
-    <ion-card-content>
-    <h2>{{this.sessionData.userData.name}}</h2>
-    </ion-card-content>
-  
+     <h1 class="large-unit">5 u <span class="small-month">November</span></h1>
+     <hr>
+     <h2 text-center>VIEW DAILY READINGS</h2>
+    </ion-card-header>      
+  </ion-card>
+  <ion-card class="grad2" (click)="viewTips()">
+    <ion-card-header class="grad-head2">
+     VIEW ENERGY SAVING TIPS    
+    </ion-card-header>  
+  </ion-card>
+  <ion-card class="grad4" (click)="addComplaints()">
+    <ion-card-header class="grad-head2">
+     COMPLAINT REGISTRATION    
+    </ion-card-header>  
   </ion-card>
 </ion-content>

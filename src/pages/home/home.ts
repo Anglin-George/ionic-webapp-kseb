@@ -2,6 +2,8 @@ import { Component,ViewChild  } from '@angular/core';
 import { NavController, MenuController ,App ,AlertController,Nav } from 'ionic-angular';
 import { WelcomePage } from '../welcome/welcome';
 import {UserprofilePage} from '../userprofile/userprofile';
+import { UserviewtipsPage } from '../userviewtips/userviewtips';
+import { ComplaintregPage } from '../complaintreg/complaintreg';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -23,6 +25,7 @@ export class HomePage {
       profilePage: UserprofilePage,
       homePage: HomePage,
       feedbackPage: HomePage,
+      complaintPage : ComplaintregPage,
     } 
     this.sessionData = JSON.parse(localStorage.getItem('userData'));
     //console.log(this.sessionData.userData.name);
@@ -34,6 +37,9 @@ export class HomePage {
   }
   goToSignupPage(){
     // this.navCtrl.push(SignupPage);
+  }
+  addComplaints(){
+    this.navCtrl.push(ComplaintregPage);
   }
   doConfirm() {
     let confirm = this.alertCtrl.create({
@@ -61,5 +67,11 @@ export class HomePage {
     });
     confirm.present()
   }
-
+  viewTips(){
+    this.navCtrl.push(UserviewtipsPage);
+  }
+  doRefresh(refresher) {
+    console.log("refresh");
+    refresher.complete();
+  }
 }

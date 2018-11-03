@@ -1,58 +1,5 @@
-<ion-menu [content]="content" persistent="true" id="hamburger-menu" swipe-back-enabled="true">
-    <ion-header>
-      <ion-toolbar color="b1">
-        <ion-title>Kseb Live</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <!-- <ion-content>
-      <ion-list>
-        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-          {{p.title}}
-        </button>
-      </ion-list>
-    </ion-content> -->
-    <ion-content>
-        <button  menuClose ion-item icon-left no-lines  (click)="nav.setRoot(pages2.homePage)">
-          <ion-icon class="icon-color" name="home"></ion-icon>
-          Home
-        </button>      
-        <button menuClose ion-item icon-left no-lines  (click)="nav.setRoot(pages2.feedbackPage)">
-          <ion-icon class="icon-color" name="ios-bulb"></ion-icon>
-          Connection Request
-        </button>
-        <button menuClose ion-item icon-left no-lines  (click)="nav.setRoot(pages2.feedbackPage)">
-          <ion-icon class="icon-color" name="ios-create"></ion-icon>
-          Complaint Registration
-        </button>
-        <button menuClose ion-item icon-left no-lines  (click)="nav.setRoot(pages2.feedbackPage)">
-          <ion-icon class="icon-color" name="cash"></ion-icon>
-          Payment History
-        </button>
-        <hr>
-        <!-- <ion-item-divider>
-          Settings
-        </ion-item-divider> -->
-        <button menuClose ion-item icon-left no-lines   (click)="navCtrl.push(pages2.profilePage)">
-          <ion-icon class="icon-color" name="person"></ion-icon>
-          My Account
-        </button>
-        <!-- <button menuClose ion-item icon-left no-lines  (click)="nav.setRoot(pages2.feedbackPage)">
-          <ion-icon class="icon-color" name="settings"></ion-icon>
-          Change Password
-        </button> -->
-        <button menuClose ion-item icon-left no-lines  (click)="doConfirm()">
-          <ion-icon class="icon-color" name="ios-exit"></ion-icon>
-          Log Out
-        </button>
-    </ion-content>
-  
-    </ion-menu>
 <ion-header>
-
-  <ion-navbar color="b1"  hideBackButton="true">
-      <button id='menutog' ion-button icon-only menuToggle>
-          <ion-icon name="menu"></ion-icon>
-        </button>
+  <ion-navbar color="b1">
     <ion-title>Profile</ion-title>
   </ion-navbar>
 
@@ -61,11 +8,13 @@
 <ion-content padding>
   <h2 text-center>{{this.sessionData.userData.name}}</h2>
   <p text-center>{{this.sessionData.userData.mobilenumber}}</p>
-  <p text-center>{{this.sessionData.userData.email}}<span class="right-icon"><ion-icon name="md-create" class="edit-font"></ion-icon></span></p>
-  <hr>
+  <p text-center>{{this.sessionData.userData.email}}<span class="right-icon" (click)="editProfile()"><ion-icon name="md-create" class="edit-font"></ion-icon></span></p>
+  <ion-item-divider>
+    General
+  </ion-item-divider>
   <ion-card>
     <ion-card-header>
-      <h2>Connection Requests<span class="right-icon">0</span></h2>
+      <h2>Complaint Registered<span class="right-icon edit-font">0</span></h2>
     </ion-card-header>
     <ion-card-content>
     <span class="right-icon">VIEW MORE</span>
@@ -73,18 +22,18 @@
   </ion-card>
   <ion-card>
     <ion-card-header>
-      <h2>Connection Requests<span class="right-icon">0</span></h2>
+      <h2>Payment History<span class="right-icon edit-font">0</span></h2>
     </ion-card-header>
     <ion-card-content>
     <span class="right-icon">VIEW MORE</span>
     </ion-card-content>
   </ion-card>
+  <ion-item-divider>
+     Settings
+  </ion-item-divider>
   <ion-card>
     <ion-card-header>
-      <h2>Connection Requests<span class="right-icon">0</span></h2>
+      <h2>Change Password</h2>
     </ion-card-header>
-    <ion-card-content>
-    <span class="right-icon">VIEW MORE</span>
-    </ion-card-content>
   </ion-card>
 </ion-content>
