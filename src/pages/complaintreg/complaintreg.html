@@ -7,12 +7,41 @@
 <ion-header>
 
   <ion-navbar color="b1">
-    <ion-title>complaintreg</ion-title>
+    <ion-title>Complaints Registration</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <ion-list>
+    <ion-item>
+        <ion-label floating>Complaint Type</ion-label>
+        <ion-select interface="action-sheet" [(ngModel)]="userData.type">
+            <ion-option>Voltage Fluctuation</ion-option>
+            <ion-option>Line Complaint</ion-option>
+            <ion-option>Street Light Complaint</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Description</ion-label>
+      <ion-textarea [(ngModel)]="userData.description"></ion-textarea>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Land mark</ion-label>
+        <ion-textarea [(ngModel)]="userData.landmark"></ion-textarea>
+    </ion-item>
+    <div padding>
+      <button id="round-box" ion-button color="b1" (click)="complaintRegister()" block>Register</button>
+    </div>
+  </ion-list>
 </ion-content>
+<ion-footer>
+    <ion-toolbar color="b1" (click)="viewComplaints()">
+      <ion-buttons text-center>
+        <button ion-button class="footer-button">
+          View Complaints      
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-footer>

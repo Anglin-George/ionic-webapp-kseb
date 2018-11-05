@@ -2,7 +2,7 @@
 <ion-header>
 
   <ion-navbar color="b1">
-    <ion-title>Tips</ion-title>
+    <ion-title>Complaints</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -13,21 +13,12 @@
         <ion-refresher-content pullingText="Pull to refresh"></ion-refresher-content>
       </ion-refresher>
   <ion-list>
-    <ion-item *ngFor="let item of tips">
-      <h2>{{item.tips}}</h2>
+    <ion-item *ngFor="let item of complaints">
+      <h2>{{item.type}}</h2>
       <ion-note item-end>{{item.CreatedOn |amTz:'Asia/Kolkata' |amTimeAgo}}</ion-note>
     </ion-item>
-    <ion-item *ngIf="noTips" text-center>
+    <ion-item *ngIf="noComplaints" text-center>
       <h2>Nothing here</h2>
     </ion-item>
   </ion-list>
 </ion-content>
-<ion-footer>
-  <ion-toolbar color="b1" (click)="addTips()">
-    <ion-buttons text-center>
-      <button ion-button class="footer-button">
-        Add Tips       
-      </button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-footer>
