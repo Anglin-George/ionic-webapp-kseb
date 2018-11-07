@@ -1,0 +1,48 @@
+<ion-header>
+
+  <ion-navbar color="b1">
+    <ion-title>New Connection Request</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+        <ion-label floating>Connection Type</ion-label>
+        <ion-select interface="action-sheet" [(ngModel)]="userData.type">
+            <ion-option>LT (415V)</ion-option>
+            <ion-option>HT (11kv to 33kV)</ion-option>           
+        </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Name</ion-label>
+      <ion-input  type="text" [(ngModel)]="userData.name"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input  type="email" [(ngModel)]="userData.email"></ion-input>       
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Mobile Number</ion-label>
+      <ion-input  type="tel" [(ngModel)]="userData.mobile"></ion-input> 
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Address</ion-label>
+      <ion-textarea [(ngModel)]="userData.address"></ion-textarea>
+    </ion-item>
+    <div padding>
+      <button id="round-box" ion-button color="b1" (click)="connectionRegister()" block>Register</button>
+    </div>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="b1" (click)="viewConnectionStatus()">
+    <ion-buttons text-center>
+      <button ion-button class="footer-button">
+        View Status      
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

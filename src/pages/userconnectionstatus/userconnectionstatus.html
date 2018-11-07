@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar color="b1">
+    <ion-title>Connection Status</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label floating>Type Mobile Number</ion-label>
+    <ion-input  type="tel" [(ngModel)]="userData.mobile"></ion-input> 
+  </ion-item>
+  <div padding>
+    <button id="round-box" ion-button color="b1" (click)="connectionStatus()" block>View Status</button>
+  </div>
+  <ion-list>
+    <ion-item *ngFor="let item of connectionrequest">
+      <h2>Name : {{item.name}}</h2>
+      <p>Type : {{item.type}}</p>
+      <p>Email : {{item.email}}</p>
+      <p>Mobile : {{item.mobile}}</p>
+      <p>Address : {{item.address}}</p>
+      <p>{{item.CreatedOn |amTz:'Asia/Kolkata' |amTimeAgo}}</p>
+      <ion-note item-end>{{item.status}}</ion-note>
+    </ion-item>
+    <ion-item *ngIf="noReq" text-center>
+      <h2>Nothing here</h2>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -15,7 +15,10 @@
   <ion-list>
     <ion-item *ngFor="let item of complaints">
       <h2>{{item.type}}</h2>
-      <ion-note item-end>{{item.CreatedOn |amTz:'Asia/Kolkata' |amTimeAgo}}</ion-note>
+      <p>{{item.description}}</p>
+      <p>Landmark: {{item.landmark}}</p>
+      <p>{{item.CreatedOn |amTz:'Asia/Kolkata' |amTimeAgo}}</p>
+      <ion-note item-end>{{item.status}}</ion-note>
     </ion-item>
     <ion-item *ngIf="noComplaints" text-center>
       <h2>Nothing here</h2>

@@ -22,6 +22,8 @@ import { UserviewtipsPage } from '../pages/userviewtips/userviewtips';
 import { UserprofileupdatePage } from '../pages/userprofileupdate/userprofileupdate';
 import { ComplaintregPage } from '../pages/complaintreg/complaintreg';
 import { UserviewcomplaintsPage } from '../pages/userviewcomplaints/userviewcomplaints';
+import { UsernewconnectionPage } from '../pages/usernewconnection/usernewconnection';
+import { UserconnectionstatusPage } from '../pages/userconnectionstatus/userconnectionstatus';
 @NgModule({
   declarations: [
     MyApp,
@@ -37,6 +39,8 @@ import { UserviewcomplaintsPage } from '../pages/userviewcomplaints/userviewcomp
     UserprofileupdatePage,
     ComplaintregPage,
     UserviewcomplaintsPage,
+    UsernewconnectionPage,
+    UserconnectionstatusPage,
   ],
   imports: [
     BrowserModule,HttpModule,HttpClientModule,MomentModule,MomentTimezoneModule,
@@ -56,7 +60,9 @@ import { UserviewcomplaintsPage } from '../pages/userviewcomplaints/userviewcomp
     UserviewtipsPage,
     UserprofileupdatePage,
     ComplaintregPage,
-    UserviewcomplaintsPage
+    UserviewcomplaintsPage,
+    UsernewconnectionPage,
+    UserconnectionstatusPage,
   ],
   providers: [
     StatusBar,

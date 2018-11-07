@@ -72,7 +72,12 @@ export class AdminhomePage {
     this.navCtrl.push(TipsPage);
   }
   addCustomer(){
-    console.log("Add Cutomer");
     this.navCtrl.push(SignupPage);
+  }
+  viewComplaints(){
+
+  }
+  viewConnectionRequests(){
+    
   }
 }

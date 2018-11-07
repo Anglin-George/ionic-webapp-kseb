@@ -6,6 +6,7 @@ import { HomePage } from '../home/home';
 import { AdminhomePage } from '../adminhome/adminhome';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { LoadingController } from 'ionic-angular';
+import { UsernewconnectionPage } from '../usernewconnection/usernewconnection';
 
 /**
  * Generated class for the WelcomePage page.
@@ -114,6 +115,10 @@ export class WelcomePage {
       });
       toast.present();
     }
+  }
+
+  connectionRequest(){
+    this.navCtrl.push(UsernewconnectionPage);
   }
 
 }

@@ -35,6 +35,14 @@ page-adminhome {
     .grad-head4{
         color: aliceblue !important; 
       }
+      .grad5 {      
+        border-radius: 8px; 
+        box-shadow: 0px 0px 18px 1px rgba(0,0,0,0.40);
+        background: linear-gradient(9deg, rgba(3,3,56,1) 0%, rgb(19, 173, 166) 100%) !important;      
+      }
+    .grad-head5{
+        color: aliceblue !important; 
+      }
 
       ion-card-content > a {
         color: rgb(255, 255, 255) !important;

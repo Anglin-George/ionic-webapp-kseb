@@ -34,48 +34,59 @@
 <ion-nav #content></ion-nav>
 
 <ion-content padding>
-  <ion-card class="grad1">
+  <ion-card class="grad1" (click)="viewUsers()">
 
     <ion-card-header class="grad-head1">
       Customers
     </ion-card-header>
   
     <ion-card-content text-right>
-      <a (click)="viewUsers()">view more</a>
+      <a>view more</a>
     </ion-card-content>
   
   </ion-card>
 
-  <ion-card class="grad2">
+  <ion-card class="grad2" (click)="viewConnectionRequests()">
 
     <ion-card-header class="grad-head2">
       Connection Requests
     </ion-card-header>
   
     <ion-card-content text-right>
-      <a (click)="viewUsers()">view more</a>
+      <a>view more</a>
     </ion-card-content>
   
   </ion-card>
-  <ion-card class="grad3">
+  <ion-card class="grad3" (click)="viewUsers()">
 
     <ion-card-header class="grad-head3">
       Bills
     </ion-card-header>
   
     <ion-card-content text-right>
-      <a (click)="viewUsers()">view more</a>
+      <a>view more</a>
     </ion-card-content>
   
   </ion-card>
-  <ion-card class="grad4">
+  <ion-card class="grad4" (click)="viewTips()">
 
     <ion-card-header class="grad-head4">
       Energy Saving Tips
     </ion-card-header>
   
     <ion-card-content text-right>
-      <a (click)="viewTips()">view more</a>
+      <a>view more</a>
+    </ion-card-content>
+  
+  </ion-card>
+  <ion-card class="grad5" (click)="viewComplaints()">
+
+    <ion-card-header class="grad-head5">
+      Complaints
+    </ion-card-header>
+  
+    <ion-card-content text-right>
+      <a>view more</a>
     </ion-card-content>
   
   </ion-card>
