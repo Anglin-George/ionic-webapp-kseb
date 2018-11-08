@@ -6,36 +6,39 @@ import { ToastController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-customers',
-  templateUrl: 'customers.html',
+  selector: 'page-adminallconnectionrequests',
+  templateUrl: 'adminallconnectionrequests.html',
 })
-export class CustomersPage {
+export class AdminallconnectionrequestsPage {
   userData = {"limit":"all"};
   loading: any;
   resposeData : any;
-  customer : any;
-  noCustomers : boolean;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public authService: AuthServiceProvider, public loadingController:LoadingController,public toastCtrl: ToastController) {
-    this.noCustomers = false;
-    this.customers();
+  connectionrequest : any;
+  noConnectionrequest : boolean;
+  constructor(public navCtrl: NavController, public navParams: NavParams,public authService: AuthServiceProvider, public loadingController:LoadingController,public toastCtrl: ToastController) {
+    this.noConnectionrequest = false;
+    this.connectionrequests();
   }
 
-  customers()
-  {
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad AdminallconnectionrequestsPage');
+  }
+  connectionrequests(){
     this.loading = this.loadingController.create({
       content: "loading.please wait..."
     });
     this.loading.present();
-    this.authService.postData(this.userData,"customers").then((result)=>{
+    this.authService.postData(this.userData,"getconnectionrequests").then((result)=>{
       this.resposeData = result;
-      if(this.resposeData.customersData.length>0)
+      if(this.resposeData.connectionData.length>0)
       {
         this.loading.dismissAll();
-        this.customer = this.resposeData.customersData;
+        this.connectionrequest = this.resposeData.connectionData;
+        console.log(this.connectionrequest);
       }
       else{
         this.loading.dismissAll();
-        this.noCustomers = true;
+        this.noConnectionrequest = true;
       }            
     }, (err) => {
       this.loading.dismissAll();
@@ -47,6 +50,6 @@ export class CustomersPage {
       });
       toast.present();
     });
-
   }
+
 }

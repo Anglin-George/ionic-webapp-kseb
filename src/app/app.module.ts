@@ -24,6 +24,10 @@ import { ComplaintregPage } from '../pages/complaintreg/complaintreg';
 import { UserviewcomplaintsPage } from '../pages/userviewcomplaints/userviewcomplaints';
 import { UsernewconnectionPage } from '../pages/usernewconnection/usernewconnection';
 import { UserconnectionstatusPage } from '../pages/userconnectionstatus/userconnectionstatus';
+import { AdminconnectionrequestsPage } from '../pages/adminconnectionrequests/adminconnectionrequests';
+import { AdminallconnectionrequestsPage } from '../pages/adminallconnectionrequests/adminallconnectionrequests';
+import { AdmincomplaintsPage } from '../pages/admincomplaints/admincomplaints';
+import { AdminallcomplaintsPage } from '../pages/adminallcomplaints/adminallcomplaints';
 @NgModule({
   declarations: [
     MyApp,
@@ -41,6 +45,10 @@ import { UserconnectionstatusPage } from '../pages/userconnectionstatus/userconn
     UserviewcomplaintsPage,
     UsernewconnectionPage,
     UserconnectionstatusPage,
+    AdminconnectionrequestsPage,
+    AdminallconnectionrequestsPage,
+    AdmincomplaintsPage,
+    AdminallcomplaintsPage,
   ],
   imports: [
     BrowserModule,HttpModule,HttpClientModule,MomentModule,MomentTimezoneModule,
@@ -63,6 +71,10 @@ import { UserconnectionstatusPage } from '../pages/userconnectionstatus/userconn
     UserviewcomplaintsPage,
     UsernewconnectionPage,
     UserconnectionstatusPage,
+    AdminconnectionrequestsPage,
+    AdminallconnectionrequestsPage,
+    AdmincomplaintsPage,
+    AdminallcomplaintsPage,
   ],
   providers: [
     StatusBar,

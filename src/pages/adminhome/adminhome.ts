@@ -6,6 +6,8 @@ import { WelcomePage } from '../welcome/welcome';
 import { SignupPage } from '../signup/signup';
 import { CustomersPage } from '../customers/customers';
 import { TipsPage } from '../tips/tips';
+import { AdminconnectionrequestsPage } from '../adminconnectionrequests/adminconnectionrequests';
+import { AdmincomplaintsPage } from '../admincomplaints/admincomplaints';
 /**
  * Generated class for the AdminhomePage page.
  *
@@ -75,9 +77,9 @@ export class AdminhomePage {
     this.navCtrl.push(SignupPage);
   }
   viewComplaints(){
-
+    this.navCtrl.push(AdmincomplaintsPage);
   }
   viewConnectionRequests(){
-    
+    this.navCtrl.push(AdminconnectionrequestsPage);
   }
 }

@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar color="b1">
+    <ion-title>Complaints</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let item of complaint; let complaintIndex = index">
+      <h2>{{item.email}}</h2>
+      <p>{{item.description}}</p>
+      <p>{{item.landmark}}</p>
+      <p>{{item.type}}</p>
+      <p>{{item.CreatedOn | amTimeAgo}}</p>
+      <ion-note item-end><button id="round-box" ion-button color="b1" (click)="solveComplaint(item,complaintIndex)">Solve</button></ion-note>
+    </ion-item>
+    <ion-item *ngIf="noComplaint" text-center>
+      <h2>Nothing here</h2>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="b1" (click)="viewAllComplaints()" >
+    <ion-buttons text-center>
+      <button ion-button class="footer-button">
+        All Complaints      
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
