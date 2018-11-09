@@ -13,6 +13,9 @@ export class HomePage {
   // pages: Array<{title: string, component: any}>;
   pages2: any;
   sessionData : any;
+  monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  thisMonth :any;
+  t= new Date();
   constructor(public navCtrl: NavController,menu: MenuController,public app: App,public alertCtrl: AlertController) {
     menu.enable(true);
     // this.pages = [
@@ -28,7 +31,8 @@ export class HomePage {
       complaintPage : ComplaintregPage,
     } 
     this.sessionData = JSON.parse(localStorage.getItem('userData'));
-    //console.log(this.sessionData.userData.name);
+    this.thisMonth = this.monthNames[(new Date()).getMonth()];
+    console.log(new Date(this.t.getFullYear(), this.t.getMonth() + 1, 0, 23, 59, 59));
   }
   openPage(page) {
     // Reset the content nav to have just this page
