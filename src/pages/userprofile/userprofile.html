@@ -8,13 +8,15 @@
 <ion-content padding>
   <h2 text-center>{{this.sessionData.userData.name}}</h2>
   <p text-center>{{this.sessionData.userData.mobilenumber}}</p>
-  <p text-center>{{this.sessionData.userData.email}}<span class="right-icon" (click)="editProfile()"><ion-icon name="md-create" class="edit-font"></ion-icon></span></p>
+  <p text-center>{{this.sessionData.userData.email}}</p>
+  <p text-center>Device No: {{this.sessionData.userData.devicenumber}}</p>
+  <p text-center>Consumer No: {{this.sessionData.userData.consumernumber}}<span class="right-icon" (click)="editProfile()"><ion-icon name="md-create" class="edit-font"></ion-icon></span></p>
   <ion-item-divider>
     General
   </ion-item-divider>
-  <ion-card>
+  <ion-card (click)="viewComplaints()">
     <ion-card-header>
-      <h2>Complaint Registered<span class="right-icon edit-font">0</span></h2>
+      <h2>Complaint Registered</h2><!--<span class="right-icon edit-font">0</span>-->
     </ion-card-header>
     <ion-card-content>
     <span class="right-icon">VIEW MORE</span>
@@ -22,7 +24,7 @@
   </ion-card>
   <ion-card>
     <ion-card-header>
-      <h2>Payment History<span class="right-icon edit-font">0</span></h2>
+      <h2>Payment History</h2>
     </ion-card-header>
     <ion-card-content>
     <span class="right-icon">VIEW MORE</span>

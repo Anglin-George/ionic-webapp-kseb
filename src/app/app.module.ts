@@ -28,6 +28,8 @@ import { AdminconnectionrequestsPage } from '../pages/adminconnectionrequests/ad
 import { AdminallconnectionrequestsPage } from '../pages/adminallconnectionrequests/adminallconnectionrequests';
 import { AdmincomplaintsPage } from '../pages/admincomplaints/admincomplaints';
 import { AdminallcomplaintsPage } from '../pages/adminallcomplaints/adminallcomplaints';
+import { UserdailyreadingPage } from '../pages/userdailyreading/userdailyreading';
+// import { PayPal, PayPalPayment, PayPalConfiguration } from '@ionic-native/paypal';
 @NgModule({
   declarations: [
     MyApp,
@@ -49,6 +51,7 @@ import { AdminallcomplaintsPage } from '../pages/adminallcomplaints/adminallcomp
     AdminallconnectionrequestsPage,
     AdmincomplaintsPage,
     AdminallcomplaintsPage,
+    UserdailyreadingPage,
   ],
   imports: [
     BrowserModule,HttpModule,HttpClientModule,MomentModule,MomentTimezoneModule,
@@ -75,13 +78,17 @@ import { AdminallcomplaintsPage } from '../pages/adminallcomplaints/adminallcomp
     AdminallconnectionrequestsPage,
     AdmincomplaintsPage,
     AdminallcomplaintsPage,
+    UserdailyreadingPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthServiceProvider,
-    Network
+    Network,
+    // PayPal,
+    // PayPalPayment,
+    // PayPalConfiguration
   ]
 })
 export class AppModule {}

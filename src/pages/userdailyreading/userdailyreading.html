@@ -1,0 +1,21 @@
+
+<ion-header>
+
+  <ion-navbar color="b1">
+    <ion-title>Daily Readings</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let item of livedatareading">
+      <h2>{{item.livereading}} u</h2>
+      <ion-note item-end>{{item.reportedtime |amTz:'Asia/Kolkata' |amCalendar}}</ion-note>
+    </ion-item>
+    <ion-item *ngIf="noReading" text-center>
+      <h2>Nothing here</h2>
+    </ion-item>
+  </ion-list>
+</ion-content>

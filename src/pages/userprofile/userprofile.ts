@@ -2,12 +2,7 @@ import { Component,ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams,Nav,MenuController ,App,ModalController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { UserprofileupdatePage } from '../userprofileupdate/userprofileupdate';
-/**
- * Generated class for the UserprofilePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { UserviewcomplaintsPage } from '../userviewcomplaints/userviewcomplaints';
 
 @IonicPage()
 @Component({
@@ -37,5 +32,9 @@ export class UserprofilePage {
         this.sessionData=result;
       }
     });
+  }
+
+  viewComplaints(){
+    this.navCtrl.push(UserviewcomplaintsPage);
   }
 }

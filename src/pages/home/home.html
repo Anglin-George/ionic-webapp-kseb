@@ -73,7 +73,7 @@
     <ion-card-header >
      <h1 class="large-unit">{{this.livedatareading}} u <span class="small-month">{{this.thisMonth}}</span></h1>
      <hr>
-     <h2 text-center>VIEW DAILY READINGS</h2>
+     <h2 text-center (click)="viewreading()">VIEW DAILY READINGS</h2>
     </ion-card-header>      
   </ion-card>
   <ion-card class="grad2" (click)="viewTips()">
@@ -85,5 +85,12 @@
     <ion-card-header class="grad-head2">
      COMPLAINT REGISTRATION    
     </ion-card-header>  
+  </ion-card>
+  <ion-card>
+    <ion-card-header >
+     <p>{{this.thisMonth}} Payment<span class="small-month">{{this.livedatareading}} u</span></p>
+     <hr>
+     <button ion-button color="b1" class="small-month" (click)="payonpaypal()">200 Pay Now</button>
+    </ion-card-header>      
   </ion-card>
 </ion-content>
