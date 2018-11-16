@@ -29,7 +29,7 @@ import { AdminallconnectionrequestsPage } from '../pages/adminallconnectionreque
 import { AdmincomplaintsPage } from '../pages/admincomplaints/admincomplaints';
 import { AdminallcomplaintsPage } from '../pages/adminallcomplaints/adminallcomplaints';
 import { UserdailyreadingPage } from '../pages/userdailyreading/userdailyreading';
-// import { PayPal, PayPalPayment, PayPalConfiguration } from '@ionic-native/paypal';
+import { PayPal, PayPalPayment, PayPalConfiguration } from '@ionic-native/paypal';
 @NgModule({
   declarations: [
     MyApp,
@@ -86,9 +86,7 @@ import { UserdailyreadingPage } from '../pages/userdailyreading/userdailyreading
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthServiceProvider,
     Network,
-    // PayPal,
-    // PayPalPayment,
-    // PayPalConfiguration
+    PayPal,
   ]
 })
 export class AppModule {}
