@@ -13,12 +13,14 @@ export class UserprofileupdatePage {
   newSessionData : any;
   resposeData : any;
   loading: any;
-  profile = {"name" : "", "mobilenumber":"","email":""};
+  profile = {"name" : "", "mobilenumber":"","email":"","devicenumber":"","consumernumber":""};
   constructor(public navCtrl: NavController, public authService: AuthServiceProvider,public navParams: NavParams,  public viewCtrl : ViewController,public toastCtrl: ToastController, public loadingController:LoadingController) {
     this.sessionData = JSON.parse(localStorage.getItem('userData'));
     this.profile.name=this.sessionData.userData.name;
     this.profile.mobilenumber=this.sessionData.userData.mobilenumber;
     this.profile.email=this.sessionData.userData.email;
+    this.profile.devicenumber=this.sessionData.userData.devicenumber;
+    this.profile.consumernumber=this.sessionData.userData.consumernumber;
     console.log(this.sessionData);
   }
 
