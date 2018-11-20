@@ -29,7 +29,7 @@
     "angular-moment-timezone": "^1.7.1",
     "angular2-moment": "^1.9.0",
     "card.io.cordova.mobilesdk": "^2.1.0",
-    "com.paypal.cordova.mobilesdk": "3.5.0",
+    "com.paypal.cordova.mobilesdk": "^3.5.0",
     "cordova-android": "6.3.0",
     "cordova-browser": "5.0.4",
     "cordova-plugin-device": "^2.0.2",
