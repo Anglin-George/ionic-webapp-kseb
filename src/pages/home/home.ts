@@ -19,6 +19,8 @@ export class HomePage {
   loading: any;
   resposeData : any;
   livedatareading : any;
+  maxlivereading : any;
+  minlivereading : any;
   pages2: any;
   devicenumber : any;
   sessionData : any;
@@ -45,6 +47,8 @@ export class HomePage {
     this.thisMonth = this.monthNames[(new Date()).getMonth()];
     console.log(new Date(this.t.getFullYear(), this.t.getMonth() + 1, 0, 23, 59, 59));
     this.livedatareading=0;
+    this.maxlivereading=0;
+    this.minlivereading=0;
     this.livereading();
   }
   openPage(page) {
@@ -98,14 +102,20 @@ export class HomePage {
     // this.loading.present();
     this.authService.postData(this.data,"livereading").then((result)=>{
       this.resposeData = result;
-      if(this.resposeData.liveData.length>0)
+      console.log(this.resposeData);
+      if(this.resposeData.liveData.length>0 && this.resposeData.firstData.length>0)
       {
         //this.loading.dismissAll();
-        this.livedatareading = this.resposeData.liveData;
+        //this.livedatareading = this.resposeData.liveData;
         for(let data of this.resposeData.liveData){
           //console.log(data);
-          this.livedatareading=data.livereading;
-        }       
+          this.maxlivereading=data.maxlivereading;
+        } 
+        for(let data of this.resposeData.firstData){
+          //console.log(data);
+          this.minlivereading=data.minlivereading;
+        }   
+        this.livedatareading = this.maxlivereading - this.minlivereading;
       }
       else{
         this.livedatareading=0;
