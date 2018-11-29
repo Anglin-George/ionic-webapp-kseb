@@ -8,6 +8,7 @@ import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { ToastController,LoadingController } from 'ionic-angular';
 import { UserdailyreadingPage } from '../userdailyreading/userdailyreading';
 import { PayPal, PayPalPayment, PayPalConfiguration } from '@ionic-native/paypal';
+import { UserpaymentPage } from '../userpayment/userpayment';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -24,6 +25,8 @@ export class HomePage {
   pages2: any;
   devicenumber : any;
   sessionData : any;
+  payamount : any;
+  usdpayment : any;
   monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
   thisMonth :any;
   t= new Date();
@@ -38,7 +41,7 @@ export class HomePage {
     this.pages2 = {
       profilePage: UserprofilePage,
       homePage: HomePage,
-      feedbackPage: HomePage,
+      feedbackPage: UserpaymentPage,
       complaintPage : ComplaintregPage,
     } 
     this.sessionData = JSON.parse(localStorage.getItem('userData'));
@@ -49,6 +52,7 @@ export class HomePage {
     this.livedatareading=0;
     this.maxlivereading=0;
     this.minlivereading=0;
+    this.payamount=0;
     this.livereading();
   }
   openPage(page) {
@@ -116,6 +120,22 @@ export class HomePage {
           this.minlivereading=data.minlivereading;
         }   
         this.livedatareading = this.maxlivereading - this.minlivereading;
+        this.livedatareading =  Math.round(this.livedatareading * 100) / 100;
+        if(this.livedatareading>=0 && this.livedatareading<=300)
+        {
+          this.payamount = 5*this.livedatareading;
+        }else if(this.livedatareading <= 350)
+        {
+          this.payamount = 5.7*this.livedatareading;
+        }else if(this.livedatareading <= 400)
+        {
+          this.payamount = 6.1*this.livedatareading;
+        }else if(this.livedatareading <= 500)
+        {
+          this.payamount = 6.7*this.livedatareading;
+        }else{
+          this.payamount = 7.50*this.livedatareading;
+        }
       }
       else{
         this.livedatareading=0;
@@ -147,7 +167,8 @@ export class HomePage {
         // Only needed if you get an "Internal Service Error" after PayPal login!
         //payPalShippingAddressOption: 2 // PayPalShippingAddressOptionPayPal
       })).then(() => {
-        let payment = new PayPalPayment('3.33', 'USD', 'Description', 'sale');
+        this.usdpayment = this.payamount*0.014;
+        let payment = new PayPalPayment(this.usdpayment, 'USD', 'Description', 'sale');
         this.payPal.renderSinglePaymentUI(payment).then(() => {
           alert("Done");
           // Successfully paid

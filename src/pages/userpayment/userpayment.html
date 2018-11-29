@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar color="b1">
+    <ion-title>Payments</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding>
+  <ion-list>
+    <ion-item *ngFor="let item of paymets; let paymentIndex = index">
+      <p>Billed On {{item.month | amDateFormat:'MMMM YYYY'}}</p>
+      <p>Total Consumption {{item.unit}} Units</p>
+      <p>Paid On {{item.paydate | amDateFormat:'MMMM Do YYYY'}}</p>
+      <ion-note item-end>
+        <button *ngIf="item.status==0"  id="round-box" ion-button color="b1" (click)="payBill(item,paymentIndex)">Pay ₹ {{item.amount}}</button>
+        <p *ngIf="item.status==1">₹ {{item.amount}} Paid</p>
+      </ion-note>
+    </ion-item>
+    <ion-item *ngIf="noPayments" text-center>
+      <h2>Nothing here</h2>
+    </ion-item>
+  </ion-list>
+</ion-content>

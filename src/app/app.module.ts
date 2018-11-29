@@ -30,6 +30,7 @@ import { AdmincomplaintsPage } from '../pages/admincomplaints/admincomplaints';
 import { AdminallcomplaintsPage } from '../pages/adminallcomplaints/adminallcomplaints';
 import { UserdailyreadingPage } from '../pages/userdailyreading/userdailyreading';
 import { PayPal, PayPalPayment, PayPalConfiguration } from '@ionic-native/paypal';
+import { UserpaymentPage } from '../pages/userpayment/userpayment';
 @NgModule({
   declarations: [
     MyApp,
@@ -52,6 +53,7 @@ import { PayPal, PayPalPayment, PayPalConfiguration } from '@ionic-native/paypal
     AdmincomplaintsPage,
     AdminallcomplaintsPage,
     UserdailyreadingPage,
+    UserpaymentPage,
   ],
   imports: [
     BrowserModule,HttpModule,HttpClientModule,MomentModule,MomentTimezoneModule,
@@ -79,6 +81,7 @@ import { PayPal, PayPalPayment, PayPalConfiguration } from '@ionic-native/paypal
     AdmincomplaintsPage,
     AdminallcomplaintsPage,
     UserdailyreadingPage,
+    UserpaymentPage,
   ],
   providers: [
     StatusBar,

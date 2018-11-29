@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams,Nav,MenuController ,App,ModalContro
 import { HomePage } from '../home/home';
 import { UserprofileupdatePage } from '../userprofileupdate/userprofileupdate';
 import { UserviewcomplaintsPage } from '../userviewcomplaints/userviewcomplaints';
+import { UserpaymentPage } from '../userpayment/userpayment';
 
 @IonicPage()
 @Component({
@@ -36,5 +37,8 @@ export class UserprofilePage {
 
   viewComplaints(){
     this.navCtrl.push(UserviewcomplaintsPage);
+  }
+  viewPayments(){
+    this.navCtrl.push(UserpaymentPage);
   }
 }

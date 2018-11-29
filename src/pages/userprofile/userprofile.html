@@ -5,7 +5,7 @@
 
 </ion-header>
 <ion-nav #content></ion-nav>
-<ion-content padding>
+<ion-content no-padding>
   <h2 text-center>{{this.sessionData.userData.name}}</h2>
   <p text-center>{{this.sessionData.userData.mobilenumber}}</p>
   <p text-center>{{this.sessionData.userData.email}}</p>
@@ -22,7 +22,7 @@
     <span class="right-icon">VIEW MORE</span>
     </ion-card-content>
   </ion-card>
-  <ion-card>
+  <ion-card (click)="viewPayments()">
     <ion-card-header>
       <h2>Payment History</h2>
     </ion-card-header>

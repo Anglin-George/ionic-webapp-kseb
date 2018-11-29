@@ -24,7 +24,7 @@
         <ion-icon class="icon-color" name="ios-create"></ion-icon>
         Complaint Registration
       </button>
-      <button menuClose ion-item icon-left no-lines  (click)="nav.setRoot(pages2.feedbackPage)">
+      <button menuClose ion-item icon-left no-lines  (click)="navCtrl.push(pages2.feedbackPage)">
         <ion-icon class="icon-color" name="cash"></ion-icon>
         Payment History
       </button>
@@ -65,13 +65,14 @@
 </ion-header>
 
 <ion-nav #content></ion-nav>
-<ion-content padding>
+<ion-content no-padding>
     <ion-refresher (ionRefresh)="doRefresh($event)">
         <ion-refresher-content pullingText="Pull to refresh"></ion-refresher-content>
       </ion-refresher>
   <ion-card>
     <ion-card-header >
      <h1 class="large-unit">{{this.livedatareading}} u <span class="small-month">{{this.thisMonth}}</span></h1>
+     <h1 text-end >₹ {{this.payamount}}</h1>
      <hr>
      <h2 text-center (click)="viewreading()">VIEW DAILY READINGS</h2>
     </ion-card-header>      
@@ -90,7 +91,7 @@
     <ion-card-header >
      <p>{{this.thisMonth}} Payment<span class="small-month">{{this.livedatareading}} u</span></p>
      <hr>
-     <button ion-button color="b1" class="small-month" (click)="payonpaypal()">200 Pay Now</button>
+     <button ion-button color="b1" class="small-month" (click)="payonpaypal()">{{this.payamount}} Pay Now</button>
     </ion-card-header>      
   </ion-card>
 </ion-content>
